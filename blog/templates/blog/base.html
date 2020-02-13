@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{{ page_title }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/css/codehilite-styles.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+
+      <div class="name-display bg-gray">
+        <img src="/static/img/me.jpg" style="height:50px;">
+      </div>
+
+      <div class="navigation bg-lightgray">
+        <nav>
+          <span class="nav-item">
+            <a href="/">Home</a>
+          </span>
+          <span class="nav-item">
+            <a href="/blog/#about">About</a>
+          </span>
+          <span class="nav-item">
+            <a href="/blog/#contact">Contact</a>
+          </span>
+        </nav>
+      </div>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <div style="text-align: center; margin-top:50px;">
+      <a href='https://ko-fi.com/K3K71FAY4' 
+        target='_blank'>
+        <img height='36'
+          style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2'
+          border='0' alt='Buy Me a Coffee at ko-fi.com'/>
+      </a>
+    </div>
+
+    <div style="min-height: 100px;"></div>
+
+    <div class="footer">
+      harlin-seritt.com - © 2020 all rights reserved
+      Built with Python, Django, Vue, CSS/Grid and HTML5.
+    </div>
+    
+  </div>
+</body>
+</html>
