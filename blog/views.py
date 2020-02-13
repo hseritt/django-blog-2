@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 from .config import COMMON_CONTEXT
-from .models import Article, Message
+from .models import Article, Message, Component
 
 
 class IndexView(View):
@@ -20,6 +20,10 @@ class IndexView(View):
             ).order_by('-modified')[:10],
 
             'all_article_list': Article.objects.all(),
+
+            'bio': Component.objects.get(name='bio'),
+
+            'intro': Component.objects.get(name='intro'),
         }
         view_context.update(COMMON_CONTEXT)
         return render(request, self.TEMPLATE, view_context)

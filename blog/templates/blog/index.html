@@ -3,11 +3,9 @@
 {% block content %}
 <div class="intro">
   <div class="intro-left">
-    <h2>Howdy, I'm Harlin!</h2>
-      I'm a technical consultant at Formtek. I work with Alfresco, Java,
-      Python and JavaScript quite a bit. I'm also an unapologetic Ubuntu
-      fanboy. I write about all that here.
-    <p>Progress, not perfection.</p>
+    {% autoescape off %}
+      {{ intro.content }}
+    {% endautoescape %}
   </div>
 
   <div class="intro-middle">
@@ -76,116 +74,9 @@
 </div>
 
 
-<div class="about-me article">
-  <a
-        name="about"
-        class="anchor-link article-title"
-        style="visibility: none; text-decoration: none;"
-      >
-    <div style="min-height: 100px;"></div>
-    <h2 class="article-title">About Me</h2>
-  </a>
-
-  <img src="/static/img/me.jpg" style="height:115px;">
-
-  <p>
-    I am Harlin Seritt. I work at <a href="https://formtek.com/">Formtek</a>. Formtek is an <a href="https://alfresco.com/">Alfresco (the company)</a> partner. I work mainly with <a href="https://github.com/Alfresco">Alfresco (the software)</a> but also do some other work there with the following languages/platforms:
-  </p>
-  <ul>
-    <li>Python</li>
-    <li>Java</li>
-    <li>JavaScript</li>
-    <li>CSS</li>
-    <li>Ephesoft</li>
-  </ul>
-
-  <p>
-    I also set up environments for our QA testers:
-  </p>
-
-  <ul>
-    <li>AWS</li>
-    <li>Linux (RHEL & Ubuntu)</li>
-    <li>Weblogic</li>
-    <li>Windows servers with SAML integration (usually with Alfresco)</li>
-  </ul>
-
-  <p>
-    I am also proficient with the following:
-  </p>
-
-  <ul>
-    <li>Tomcat</li>
-    <li>Nginx and Apache web servers</li>
-    <li>RDBMS: MySQL, Postgresql, MS SQL, Oracle, IBM DB2</li>
-    <li>Solr</li>
-  </ul>
-
-  <p>
-    I got my start in the technology field relatively late. I didn't go to college until well after I got out of the military. I managed to get a CIS degree (AS) at Griffin Technical College in 2004 -- I was 35 years old. After that, things kind of took off from there. For my work history in this field, please have a look at my <a href="https://www.linkedin.com/in/harlin-seritt/">LinkedIn page</a>.
-  </p>
-
-  <h4>
-    My path of learning:
-  </h4>
-
-  <ul>
-    <li>[2000] First computer. 4GB hard drive. Cyrex cpu. I learned Windows (98 & 2000) fairly quickly.</li>
-    <li>[2001] Got into HTML and Apache Web Server</li>
-    <li>[2001] Picked up SuSE Linux (version 7 I think)</li>
-    <li>[2001] Mandrake (now Mandriva) (version 7 too)</li>
-    <li>[2002] I took courses in C, C++, Java and the .NET languages in school.</li>
-    <li>[2003] Java and PHP</li>
-    <li>[2004] Perl</li>
-    <li>[2004] Debian & Ubuntu when it first came out</li>
-    <li>[2004] Python</li>
-    <li>[2006] CherryPy, Django, CSS, HTML5, JavaScript (jQuery mostly), JSPs, Worked on hosting at IBM.</li>
-    <li>[2009] Bash, more PHP, more Python and more Java.
-    <li>[2011] Alfresco through to now.</li>
-    <li>[2012] AWS</li>
-    <li>[2012] Ruby and ROR</li>
-    <li>[2013] JavaScript frameworks (Angular, React, MEAN stack)</li>
-    <li>
-      [2019] Now in 2019 and 2020, at work, I am back to working with JSF 1.1 and 2.1 -- who knew I would be going backwards like this? :-D
-    </li>
-  </ul>
-
-  <p>What a long strange trip it's been.</p>
-
-  <h4>My rig & environments</h4>
-
-  <ul>
-    <li>Lenovo X1 Carbon laptop - 16GB memory, i7 CPU</li>
-    <li>ThinkPad T460 - I could drop it from a building and it would still boot.</li>
-    <li>Had a MacBook Pro at Alfresco. It was pretty good. I still want buy one for myself though.</li>
-    <li>Ubuntu 18.04 (reluctantly with Windows 10 dual booted only because I need it for work on occasion)</li>
-    <li>Linode for hosting</li>
-    <li>Sublime for Python and Vue / Code for other JS frameworks</li>
-  </ul>
-
-  <h4>Before working in technology</h4>
-
-  <ul>
-    <li>Worked at Carmax while I was in school.</li>
-    <li>Worked many sales jobs - lawncare services, termite and pest control, cemetary, industrial chemicals, promotional vacation vouchers, home alarms, etc...</li>
-    <li>Logistics and warehousing</li>
-    <li>Military USMC (1987-1993)</li>
-  </ul>
-
-  <h4>Military</h4>
-
-  <ul>
-    <li>Meditarranean floats (MSSG-26, MSSG-22) in 1989 (Lebanon), 1990 (Liberia and Gulf War I) and 1992 (nothing happened on this float, thank God)</li>
-    <li>Panama 1988</li>
-    <li>Norway 1988</li>
-    <li>Parris Island 1987 Platoon 2066.</li>
-  </ul>
-
-  <p>
-    Graduated from Stockbridge High School (Stockbridge, GA) 1987.
-  </p>
-
-</div>
+{% autoescape off %}
+  {{ bio.content }}
+{% endautoescape %}
 
 <div class="contact article">
   <a

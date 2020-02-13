@@ -63,3 +63,14 @@ class Message(models.Model):
 
     def __str__(self):
         return f'{self.full_name} {self.email}'
+
+
+class Component(models.Model):
+    name = models.CharField('Name', max_length=50, unique=True)
+    content = models.TextField('Content')
+    is_visible = models.BooleanField('Visible?', default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
