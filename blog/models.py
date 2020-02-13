@@ -7,6 +7,10 @@ class Category(models.Model):
     name = models.CharField('Category', max_length=50, unique=True)
     description = models.TextField('Description', null=True, blank=True)
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         return self.name
 
@@ -15,6 +19,10 @@ class Image(models.Model):
     image_file = models.ImageField(
         'Image', upload_to='static/img/%Y/%m/%d'
     )
+
+    class Meta:
+        verbose_name = 'Image'
+        verbose_name_plural = 'Images'
 
     def __str__(self):
         return self.image_file.url
@@ -35,6 +43,10 @@ class Article(models.Model):
     needs_updating = models.BooleanField(default=False)
     update_description = models.TextField(null=True, blank=True)
     is_updated = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'Image'
+        verbose_name_plural = 'Images'
 
     def __str__(self):
         return self.title
@@ -61,6 +73,10 @@ class Message(models.Model):
     comment = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = 'Message'
+        verbose_name_plural = 'Messages'
+
     def __str__(self):
         return f'{self.full_name} {self.email}'
 
@@ -71,6 +87,10 @@ class Component(models.Model):
     is_visible = models.BooleanField('Visible?', default=False)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Component'
+        verbose_name_plural = 'Components'
 
     def __str__(self):
         return self.name
