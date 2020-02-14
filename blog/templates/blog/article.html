@@ -29,5 +29,12 @@
       {{ article.content|markdown }}
     </p>
   </div>
+
+  <div>
+    <h2>Add a Comment</h2>
+
+    {{ comment_form.as_p }}
+    
+  </div>
 </div>
 {% endblock %}

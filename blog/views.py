@@ -2,7 +2,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
 from .config import COMMON_CONTEXT
-from .models import Article, Message, Component
+from .forms import ArticleCommentForm
+from .models import Article, Message, Component, ArticleComment
 
 
 class IndexView(View):
@@ -42,8 +43,12 @@ class ArticleView(View):
     TEMPLATE = 'blog/article.html'
 
     def get(self, request, slugged_title):
+        article = Article.objects.get(slugged_title=slugged_title)
+        comment_form = ArticleCommentForm()
         view_context = {
-            'article': Article.objects.get(slugged_title=slugged_title),
+            'article': article,
+            'comments': ArticleComment.objects.filter(article=article),
+            'comment_form': comment_form,
         }
         view_context.update(COMMON_CONTEXT)
         return render(request, self.TEMPLATE, view_context)

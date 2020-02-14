@@ -58,6 +58,8 @@ class ArticleComment(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    full_name = models.CharField('Your Name', max_length=30)
+    email = models.EmailField('Email Address', null=True, blank=True)
 
     class Meta:
         verbose_name = 'Article Comment'
