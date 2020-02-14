@@ -45,8 +45,8 @@ class Article(models.Model):
     is_updated = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name = 'Image'
-        verbose_name_plural = 'Images'
+        verbose_name = 'Article'
+        verbose_name_plural = 'Articles'
 
     def __str__(self):
         return self.title
