@@ -8,7 +8,7 @@ register = template.Library()
 
 @register.filter()
 def markdown(value, arg=None):
-    if not value:
-        return ''
-    else:
+    if value:
         return mark_safe(markdownify(value))
+    else:
+        return ''

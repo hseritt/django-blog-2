@@ -7,28 +7,42 @@
   <div id="article-div" class="article">
 
     <div class="vertical-block-20"></div>
+    
     <h2 class="article-title">{{ article.title }}</h2>
+    
     <p class="published-on">Published on {{ article.published }}</p>
+    
     {% if article.needs_updating %}
+      
       <p class="article-needs-updating">
         This article is a bit outdated. As soon as I can, I'll update it. It's ok to read but take anything that looks related to time (versions, technologies, etc.) with a grain of salt. Thanks for reading!
       </p>
 
       {% if article.update_description %}
+        
         <p class="updates-needed">
           Updates needed: {{ article.update_description }}
         </p>
+      
       {% endif %}
+    
     {% else %}
+      
       {% if article.is_updated %}
+
         <p class="article-updated">
           Updated on {{ article.modified }}!
         </p>
+      
       {% endif %}
+    
     {% endif %}
+    
     <p>
       {{ article.content|markdown }}
     </p>
+
   </div>
 </div>
+
 {% endblock %}
