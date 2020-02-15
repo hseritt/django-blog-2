@@ -28,7 +28,8 @@ class IndexView(View):
 
             'intro': Component.objects.get(name='intro'),
 
-            'categories': Category.objects.filter(is_active=True),
+            'categories': Category.objects.filter(
+                is_active=True).order_by('name'),
         }
         view_context.update(COMMON_CONTEXT)
         return render(request, self.TEMPLATE, view_context)

@@ -6,8 +6,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: larger;
   color: #484a49;
-  margin-left: 20%;
-  margin-right: 20%;
   margin-top: 1em;
   line-height: 1.5em;
   word-spacing: 0.1em;
@@ -42,18 +40,23 @@ pre {
   color: #d6d5d2;
   padding: 1em;
   border-radius: 10px;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;   
 }
 
 .wrapper {
-  /*
-  margin-left: 25%;
-  margin-right: 25%;
-  */
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: auto-fit, 1fr 1fr; */
+  /* grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) ); */
   padding: 1em;
   background-color: white;
   position: sticky;
@@ -62,7 +65,7 @@ pre {
   -webkit-box-shadow: 0 4px 3px -3px black;
   -moz-box-shadow: 0 3px 3px -3px black;
   box-shadow: 0 4px 3px -3px black;
-
+  /* min-width: 150px; */
 }
 
 .header-icon {
@@ -78,7 +81,9 @@ pre {
 .navigation {
   display: grid;
   align-items: start;
-  justify-items: end;
+  /*justify-items: start;*/
+  justify-content: end;
+  grid-column-gap: 1em;
 }
 
 .nav-item {
@@ -87,7 +92,8 @@ pre {
 
 .intro {
   display: grid;
-  grid-template-columns: 45% 10% 45%;
+  /* grid-template-columns: 45% 10% 45%; */
+  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
   grid-gap: 1em;
   margin-top: 50px;
   margin-left: 2%;
