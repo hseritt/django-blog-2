@@ -32,6 +32,8 @@
 </div>
 
 <div class="body">
+
+  <div class="vertical-block-50"></div>
   
   <h2 class="article-list-header">Latest Articles</h2>
 
@@ -50,6 +52,8 @@
   
   {% endfor %}
 
+  <div class="vertical-block-50"></div>
+
   <h2 class="article-list-header">Recently Updated Articles</h2>
 
   {% for article in updated_article_list %}
@@ -66,6 +70,154 @@
     </div>
   
   {% endfor %}
+
+  <div class="vertical-block-50"></div>
+
+  <h2 class="article-list-header">Articles by Category</h2>
+
+  <style>
+      .category-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-bottom: 50px;
+        grid-row-gap: 1em;
+        grid-column-gap: 1em;
+        margin-left: 1em;
+      }
+
+      .category-btn {
+        background-color: #6fc9f2;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        border: 0;
+        /* background: none; */
+        box-shadow: none;
+        border-radius: 5px;
+      }
+  </style>
+
+  <div class="category-wrapper">
+  {% for category in categories %}
+    <!--
+    <div class="article-list">
+
+      <h4>{{ category.name }} 
+        
+        <a id="display-link-{{ category.name }}" onclick="displayArticleList('{{ category.name }}')"
+           style="cursor: pointer;">
+          <span style="font-size:24px;">+</span>
+        </a>
+        
+        <a id="undisplay-link-{{ category.name }}" onclick="undisplayArticleList('{{ category.name }}')"
+           style="cursor: pointer; display: none;">
+          <span style="font-size:24px;">-</span>
+        </a>
+      
+      </h4>
+
+      <div style="display:none;" id="articles-of-{{ category.name }}">
+        {% for article in category.article_set.all %}
+          
+          <p>
+            <a
+              id="{{ article.id }}" href="/blog/article/{{ article.slugged_title }}/">
+              {{ article.title }} ({{ article.modified }})
+            </a>
+          </p>
+
+        {% endfor %}
+      </div>
+    </div>
+    -->
+  
+    <div>
+      <button onclick="displayArticleList('{{ category.name }}')" class="category-btn">
+        {{ category.name }}
+      </button>
+    </div>
+    
+  {% endfor %}
+  </div>
+
+  <div class="category-article-list">
+    {% for category in categories %}
+      <div id="articles-of-category-{{ category.name }}" style="display:none;">
+        {% for article in category.article_set.all %}
+          <p>
+            <a
+              id="{{ article.id }}" href="/blog/article/{{ article.slugged_title }}/">
+              {{ article.title }}
+            </a>
+          </p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="vertical-block-100"></div>
+
+  <script>
+    // With Links
+    /*
+    let displayArticleList = function(categoryName) {
+      console.log('Calling displayArticleList ...');
+      articleListDiv = document.getElementById("articles-of-" + categoryName);
+      displayLink = document.getElementById("display-link-" + categoryName);
+      undisplayLink = document.getElementById("undisplay-link-" + categoryName);
+      articleListDiv.style.display = "";
+      displayLink.style.display = "none";
+      undisplayLink.style.display = "";
+
+    };
+
+    let undisplayArticleList = function(categoryName) {
+      console.log('Calling undisplayArticleList ...');
+      articleListDiv = document.getElementById("articles-of-" + categoryName);
+      displayLink = document.getElementById("display-link-" + categoryName);
+      undisplayLink = document.getElementById("undisplay-link-" + categoryName);
+      articleListDiv.style.display = "none";
+      displayLink.style.display = "";
+      undisplayLink.style.display = "none";
+
+    };
+    */
+
+    // With Buttons
+    let displayedArticleDiv = "";
+
+    let displayArticleList = function(categoryName) {
+      console.log('Calling displayArticleList ...');
+      articleListDiv = document.getElementById("articles-of-category-{{ categoryName }}" + categoryName);
+      console.log('Our articleListDiv is ', articleListDiv);
+      try {
+        displayedArticleDiv.style.display = "none";
+      } catch (err) {
+        console.log('No properties set for displayedArticleDiv ....');
+      }
+      
+      articleListDiv.style.display = "";
+      displayedArticleDiv = articleListDiv;
+    }
+  </script>
+
+
+  <!--
+  {% for article in updated_article_list %}
+    
+    <div class="article-list">
+      
+      <p>
+        <a id="{{ article.id }}" href="/blog/article/{{ article.slugged_title }}/"
+        >
+          {{ article.title }} ({{ article.modified }})
+        </a>
+      </p>
+    
+    </div>
+  
+  {% endfor %}
+  -->
 
   <h2 class="article-list-header">All Articles</h2>
 

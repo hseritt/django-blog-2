@@ -5,6 +5,7 @@ from markdownx.models import MarkdownxField
 
 class Category(models.Model):
     name = models.CharField('Category', max_length=50, unique=True)
+    is_active = models.BooleanField('Active', default=True)
     description = models.TextField('Description', null=True, blank=True)
 
     class Meta:

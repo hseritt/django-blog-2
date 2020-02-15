@@ -3,7 +3,9 @@ from django.shortcuts import render
 from django.views import View
 from .config import COMMON_CONTEXT
 from .forms import ArticleCommentForm
-from .models import Article, Message, Component, ArticleComment
+from .models import (
+    Article, Message, Component, ArticleComment, Category
+)
 
 
 class IndexView(View):
@@ -25,6 +27,8 @@ class IndexView(View):
             'bio': Component.objects.get(name='bio'),
 
             'intro': Component.objects.get(name='intro'),
+
+            'categories': Category.objects.filter(is_active=True),
         }
         view_context.update(COMMON_CONTEXT)
         return render(request, self.TEMPLATE, view_context)

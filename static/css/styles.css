@@ -124,6 +124,10 @@ pre {
   margin-top: 5%
 }
 
+.category-article-list {
+  margin-left: 1em;
+}
+
 .article {
   margin-top: 1em;
 }
@@ -198,6 +202,10 @@ textarea {
 
 .vertical-block-100 {
   min-height: 100px;
+}
+
+.vertical-block-50 {
+  min-height: 50px;
 }
 
 .vertical-block-20 {
