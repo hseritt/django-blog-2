@@ -13,7 +13,7 @@
     <div class="header">
 
       <div class="name-display bg-gray">
-        <img src="/static/img/me.jpg" style="height:50px;">
+        <img class="header-icon" src="/static/img/me.jpg">
       </div>
 
       <div class="navigation bg-lightgray">
@@ -34,26 +34,19 @@
     {% block content %}
     {% endblock %}
 
-    <div style="text-align: center; margin-top:50px;">
-      <!--
-      <p>
-        <a class="twitter-share-button"
-          href="
-            https://twitter.com/intent/tweet?text={{ article.title|urlencode }}-{{ request.build_absolute_uri|urlencode }}&?url={{request.build_absolute_uri|urlencode }}">
-          Tweet
-        </a>
-      </p>
-      -->
-      <p style="font-style:italic; font-size:16px;">If this blog is helpful, please consider helping me pay it backward with a coffee.</p>
+    <div class="kofi">
+
+      <p>If this blog is helpful, please consider helping me pay it backward with a coffee.</p>
       <a href='https://ko-fi.com/K3K71FAY4' 
         target='_blank'>
         <img height='36'
           style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2'
           border='0' alt='Buy Me a Coffee at ko-fi.com'/>
       </a>
+    
     </div>
 
-    <div style="min-height: 100px;"></div>
+    <div class="vertical-block-100"></div>
 
     <div class="footer">
       harlin-seritt.com - © 2020 all rights reserved. I rolled my own with Python, Django, CSS/Grid and HTML5. I didn't use vi though.

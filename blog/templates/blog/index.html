@@ -14,22 +14,22 @@
 
   <div class="intro-right">
     <a href="https://www.linkedin.com/in/harlin-seritt/">
-      <img src="/static/img/linkedin.png" style="height:50px;">
+      <img class="intro-img" src="/static/img/linkedin.png">
     </a>
 
     <a href="https://twitter.com/HarlinAtWork">
-      <img src="/static/img/twitter.png" style="height:50px;">
+      <img class="intro-img" src="/static/img/twitter.png">
     </a>
 
     <a href="https://github.com/hseritt">
-      <img src="/static/img/github.png" style="height:50px;">
+      <img class="intro-img" src="/static/img/github.png">
     </a>
   </div>
 </div>
 
 <div class="body">
   
-  <h2>Latest Articles</h2>
+  <h2 class="article-list-header">Latest Articles</h2>
 
   {% for article in article_list %}
     <div class="article-list">
@@ -42,7 +42,7 @@
     </div>
   {% endfor %}
 
-  <h2 style="margin-top:5%">Recently Updated Articles</h2>
+  <h2 class="article-list-header">Recently Updated Articles</h2>
 
   {% for article in updated_article_list %}
     <div class="article-list">
@@ -55,7 +55,7 @@
     </div>
   {% endfor %}
 
-  <h2 style="margin-top:5%">All Articles</h2>
+  <h2 class="article-list-header">All Articles</h2>
 
   {% for article in all_article_list %}
     <div class="article-list">
@@ -82,10 +82,10 @@
   <a
         name="contact"
         class="anchor-link article-title"
-        style="visibility: none; text-decoration: none;"
       >
-    <div style="min-height: 100px;"></div>
-    <h2 class="">Contact Me!</h2>
+    <div class="vertical-block-100"></div>
+    
+    <h2>Contact Me!</h2>
   </a>
 
   <form action="" method="POST">
@@ -106,7 +106,7 @@
       Comment / Question / Suggestion
     </p>
 
-    <textarea style="height:250px;width:500px;padding:1em;" name="comment"></textarea>
+    <textarea name="comment"></textarea>
 
     <br>
 
