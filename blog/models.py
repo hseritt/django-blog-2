@@ -54,11 +54,13 @@ class Article(models.Model):
 
 class ArticleComment(models.Model):
     article = models.ForeignKey('Article', on_delete=models.CASCADE)
-    content = models.TextField()
+    content = models.TextField('Comment')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    full_name = models.CharField('Your Name', max_length=30)
+    full_name = models.CharField(
+        'Your Name', max_length=30
+    )
     email = models.EmailField('Email Address', null=True, blank=True)
 
     class Meta:
@@ -80,7 +82,7 @@ class Message(models.Model):
         verbose_name_plural = 'Messages'
 
     def __str__(self):
-        return f'{self.full_name} {self.email}'
+        return f'{self.full_name} {self.email} at {self.created}'
 
 
 class Component(models.Model):

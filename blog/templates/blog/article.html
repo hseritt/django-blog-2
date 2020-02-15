@@ -1,6 +1,24 @@
 {% extends 'blog/base.html' %}
 {% load markdownx %}
 {% block content %}
+
+<style>
+  .comment-form {
+    
+  }
+  
+  textarea {
+    width: 530px;
+    height: 250px;
+    padding: 1em;
+  }
+
+  .comment {
+    margin-top: 75px;
+  }
+
+</style>
+
 <div class="body">
 
   <div id="article-div" class="article">
@@ -28,13 +46,6 @@
     <p>
       {{ article.content|markdown }}
     </p>
-  </div>
-
-  <div>
-    <h2>Add a Comment</h2>
-
-    {{ comment_form.as_p }}
-    
   </div>
 </div>
 {% endblock %}
