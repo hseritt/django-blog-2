@@ -79,10 +79,10 @@
       .category-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat( auto-fit, minmax(110px, 1fr) );
         margin-bottom: 50px;
-        grid-row-gap: 1em;
-        grid-column-gap: 1em;
-        margin-left: 1em;
+        grid-row-gap: 1.5em;
+        grid-column-gap: 0.5em;
       }
 
       .category-btn {

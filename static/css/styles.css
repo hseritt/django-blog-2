@@ -48,8 +48,8 @@ pre {
 }
 
 .wrapper {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .header {
@@ -92,8 +92,8 @@ pre {
 
 .intro {
   display: grid;
-  /* grid-template-columns: 45% 10% 45%; */
-  grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+  grid-template-columns: 50% 5% 45%;
+  /*grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );*/
   grid-gap: 1em;
   margin-top: 50px;
   margin-left: 2%;
@@ -131,7 +131,7 @@ pre {
 }
 
 .category-article-list {
-  margin-left: 1em;
+
 }
 
 .article {
