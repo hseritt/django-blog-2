@@ -47,8 +47,13 @@ class IndexView(View):
 class ArticleView(View):
     TEMPLATE = 'blog/article.html'
 
+    def increment_view_count(self, article):
+        article.view_count += 1
+        article.save()
+
     def get(self, request, slugged_title):
         article = Article.objects.get(slugged_title=slugged_title)
+        self.increment_view_count(article)
         comment_form = ArticleCommentForm()
         view_context = {
             'article': article,

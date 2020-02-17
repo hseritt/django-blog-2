@@ -47,13 +47,14 @@ class Article(models.Model):
     needs_updating = models.BooleanField(default=False)
     update_description = models.TextField(null=True, blank=True)
     is_updated = models.BooleanField(default=False)
+    view_count = models.IntegerField('View Count', default=0)
 
     class Meta:
         verbose_name = 'Article'
         verbose_name_plural = 'Articles'
 
     def __str__(self):
-        return self.title
+        return f'{self.title} - Views: {self.view_count}'
 
 
 class ArticleComment(models.Model):
