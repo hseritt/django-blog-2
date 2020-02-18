@@ -1,5 +1,5 @@
 html {
-  /* scroll-behavior: smooth; */
+
 }
 
 body {
@@ -55,17 +55,17 @@ pre {
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-columns: auto-fit, 1fr 1fr; */
-  /* grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) ); */
   padding: 1em;
   background-color: white;
   position: sticky;
   top: 0;
   background-color: white;
-  -webkit-box-shadow: 0 4px 3px -3px black;
-  -moz-box-shadow: 0 3px 3px -3px black;
-  box-shadow: 0 4px 3px -3px black;
-  /* min-width: 150px; */
+
+  -webkit-box-shadow: 0 5px 10px -4px gray;
+  -moz-box-shadow: 0 5px 10px -4px gray;
+  box-shadow: 0 5px 10px -4px gray;
+  margin-left: -50.9%;
+  margin-right: -50.9%;
 }
 
 .header-icon {
@@ -76,14 +76,15 @@ pre {
   display: grid;
   align-items: start;
   justify-items: start;
+  margin-left: 52.5%;
 }
 
 .navigation {
   display: grid;
   align-items: start;
-  /*justify-items: start;*/
   justify-content: end;
   grid-column-gap: 1em;
+  margin-right: 52.5%;
 }
 
 .nav-item {
@@ -93,7 +94,6 @@ pre {
 .intro {
   display: grid;
   grid-template-columns: 50% 5% 45%;
-  /*grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );*/
   grid-gap: 1em;
   margin-top: 50px;
   margin-left: 2%;
