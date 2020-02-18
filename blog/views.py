@@ -30,6 +30,8 @@ class IndexView(View):
 
             'categories': Category.objects.filter(
                 is_active=True).order_by('name'),
+
+            'contact_message': Component.objects.get(name='contact_message'),
         }
         view_context.update(COMMON_CONTEXT)
         return render(request, self.TEMPLATE, view_context)

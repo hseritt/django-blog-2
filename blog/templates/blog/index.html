@@ -253,6 +253,10 @@
     <div class="vertical-block-100"></div>
     
     <h2>Contact Me!</h2>
+
+    {% autoescape off %}
+      {{ contact_message.content }}
+    {% endautoescape %}
   
   </a>
 
@@ -260,23 +264,23 @@
     
     {% csrf_token %}
     
-    <p>
+    <p style="font-weight: bold;">
       Name
     </p>
 
-    <input type="text" name="full_name" placeholder="Full Name" maxlength="30" />
+    <input type="text" name="full_name" placeholder="Full Name" maxlength="30" required="true" />
 
-    <p>
+    <p style="font-weight: bold;">
       Email Address (if you want me to write you back)
     </p>
 
-    <input type="email" name="email" placeholder="Email Address">
+    <input type="email" name="email" placeholder="Email Address" required="true">
 
-    <p>
+    <p style="font-weight: bold;">
       Comment / Question / Suggestion
     </p>
 
-    <textarea name="comment"></textarea>
+    <textarea required="true" name="comment"></textarea>
 
     <br>
 
