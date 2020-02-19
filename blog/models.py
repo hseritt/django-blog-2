@@ -103,3 +103,11 @@ class Component(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Tweet(models.Model):
+    message = models.CharField('Message', max_length=250, unique=True)
+    is_enabled = models.BooleanField('Enabled', default=False)
+
+    def __str__(self):
+        return self.message
